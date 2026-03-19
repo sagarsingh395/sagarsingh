@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Groups</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f4f4f4;
+            font-size: 13px;
+        }
+
+        /* top bar */
+        .topbar {
+            background: #5c6bc0;
+            color: #fff;
+            padding: 8px 15px;
+        }
+
+        /* main box */
+        .box {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* table style */
+        .permission-table td {
+            padding: 3px 6px;
+            vertical-align: top;
+        }
+
+        .permission-table input {
+            margin-right: 5px;
+        }
+
+        .header-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Row -->
+    <div class="row">
+        <!-- Datatables -->
+        <div class="col-lg-12">
+            <div class="card mb-4">
+                <div class="card-header py-1 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Add Group</h6>
+                    <div class="dropdown no-arrow">
+                        <a href="#" class="btn btn-primary btn-sm">Back</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="post">
+                        <input type="hidden" name="csrf_lux_beauty"
+                            value="f648881002a1bc869f7fa9854a27914cf9c60866492e3be87f25f82c713b4ba9">
+                        <div class="form-group row">
+                            <label for="post_name" class="col-sm-2 col-form-label">Group Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="post_name" id="post_name"
+                                    placeholder="Group Name">
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="image" class="col-sm-2 mb-3 mb-sm-0">Add Privilege:</label>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <input class="form-check-input" type="checkbox" name="" value=""
+                                                id="AllPrivilege">
+                                            <label class="form-check-label" for="AllPrivilege">All Privilege</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input class="form-check-input" type="checkbox"  value="1">
+                                            <label class="form-check-label"
+                                                data-placement="right" >users</label>
+                                        </div>
+                                        <div class="col-sm-9">
+
+                                            <input type="checkbox" value="1">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">Add</label>
+                                            </div>
+
+                                            <input type="checkbox" value="1">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">Edit</label>
+                                            </div>
+
+                                            <input type="checkbox" value="1">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">View</label>
+                                            </div>
+
+                                            <input type="checkbox" value="1">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">Delete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[1]"
+                                                    value="2" id="Users Groups" disabled="">
+                                                <label class="form-check-label" for="Users Groups" data-toggle="tooltip"
+                                                    data-placement="right" title="2">Users Groups</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[1][]" id="Listingh1" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[1][]"
+                                                        id="Add1" value="2" disabled="">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[1][]"
+                                                        id="Edit1" value="3" disabled="">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[1][]"
+                                                        id="Delete1" value="4" disabled="">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[2]"
+                                                    value="6" id="Setting">
+                                                <label class="form-check-label" for="Setting" data-toggle="tooltip"
+                                                    data-placement="right" title="6">Setting</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[2][]" id="Listingh2" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[2][]"
+                                                        id="Update2" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Update</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[3]"
+                                                    value="7" id="CMS">
+                                                <label class="form-check-label" for="CMS" data-toggle="tooltip"
+                                                    data-placement="right" title="7">CMS</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[3][]" id="Listingh3" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[3][]"
+                                                        id="Add3" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[3][]"
+                                                        id=" Edit3" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3"> Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[3][]"
+                                                        id=" Delete3" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4"> Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[4]"
+                                                    value="8" id="Blogs">
+                                                <label class="form-check-label" for="Blogs" data-toggle="tooltip"
+                                                    data-placement="right" title="8">Blogs</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[4][]" id="Listingh4" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[4][]"
+                                                        id="Add4" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[4][]"
+                                                        id="Edit4" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[4][]"
+                                                        id="Delete4" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[5]"
+                                                    value="9" id="Faq">
+                                                <label class="form-check-label" for="Faq" data-toggle="tooltip"
+                                                    data-placement="right" title="9">Faq</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[5][]" id="Listingh5" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[5][]"
+                                                        id="Add5" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[5][]"
+                                                        id="Edit5" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[5][]"
+                                                        id="Delete5" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[6]"
+                                                    value="10" id="Testimonial">
+                                                <label class="form-check-label" for="Testimonial" data-toggle="tooltip"
+                                                    data-placement="right" title="10">Testimonial</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[6][]" id="Listingh6" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[6][]"
+                                                        id="Add6" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[6][]"
+                                                        id="Edit6" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[6][]"
+                                                        id="Delete6" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[7]"
+                                                    value="11" id="Banner">
+                                                <label class="form-check-label" for="Banner" data-toggle="tooltip"
+                                                    data-placement="right" title="11">Banner</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[7][]" id="Listingh7" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[7][]"
+                                                        id="Add7" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[7][]"
+                                                        id="Edit7" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[7][]"
+                                                        id="Delete7" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[8]"
+                                                    value="12" id="Course">
+                                                <label class="form-check-label" for="Course" data-toggle="tooltip"
+                                                    data-placement="right" title="12">Course</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[8][]" id="Listingh8" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[8][]"
+                                                        id="Add8" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[8][]"
+                                                        id="Edit8" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[8][]"
+                                                        id="Delete8" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[9]"
+                                                    value="13" id="Experts">
+                                                <label class="form-check-label" for="Experts" data-toggle="tooltip"
+                                                    data-placement="right" title="13">Experts</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[9][]" id="Listingh9" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[9][]"
+                                                        id="Add9" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[9][]"
+                                                        id="Edit9" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[9][]"
+                                                        id="Delete9" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[10]"
+                                                    value="14" id="Contact-us">
+                                                <label class="form-check-label" for="Contact-us" data-toggle="tooltip"
+                                                    data-placement="right" title="14">Contact-us</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[10][]" id="Listingh10" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[10][]"
+                                                        id="Reply10" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Reply</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[10][]"
+                                                        id="WhatsApp Mark10" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">WhatsApp Mark</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[10][]"
+                                                        id=" Export Excel10" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4"> Export Excel</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[10][]"
+                                                        id=" Delete10" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5"> Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[11]"
+                                                    value="15" id="Subscriber">
+                                                <label class="form-check-label" for="Subscriber" data-toggle="tooltip"
+                                                    data-placement="right" title="15">Subscriber</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[11][]" id="Listingh11" value="1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[12]"
+                                                    value="16" id="Contact (WhatsApp)">
+                                                <label class="form-check-label" for="Contact (WhatsApp)"
+                                                    data-toggle="tooltip" data-placement="right" title="16">Contact
+                                                    (WhatsApp)</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[12][]" id="Listingh12" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id="Add12" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id="Edit12" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id="View12" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id="Delete12" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id="Export to Excel12" value="6">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="6">Export to Excel</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id=" WhatsApp Mark12" value="7">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="7"> WhatsApp Mark</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[12][]"
+                                                        id=" Non-WhatsApp12" value="8">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="8"> Non-WhatsApp</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[13]"
+                                                    value="17" id="Whatsapp Replied">
+                                                <label class="form-check-label" for="Whatsapp Replied"
+                                                    data-toggle="tooltip" data-placement="right" title="17">Whatsapp
+                                                    Replied</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[13][]" id="Listingh13" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[13][]"
+                                                        id="Read Message13" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Read Message</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[14]"
+                                                    value="18" id="Referral">
+                                                <label class="form-check-label" for="Referral" data-toggle="tooltip"
+                                                    data-placement="right" title="18">Referral</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[14][]" id="Listingh14" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[14][]"
+                                                        id="View14" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[14][]"
+                                                        id=" Delete14" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3"> Delete</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[14][]"
+                                                        id=" Update14" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4"> Update</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[14][]"
+                                                        id=" Amount Paid/Change Status14" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5"> Amount Paid/Change
+                                                        Status</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[15]"
+                                                    value="19" id="Contact design">
+                                                <label class="form-check-label" for="Contact design"
+                                                    data-toggle="tooltip" data-placement="right" title="19">Contact
+                                                    design</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[15][]" id="Listingh15" value="1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[16]"
+                                                    value="20" id="Broadcast">
+                                                <label class="form-check-label" for="Broadcast" data-toggle="tooltip"
+                                                    data-placement="right" title="20">Broadcast</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[16][]" id="Listingh16" value="1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[17]"
+                                                    value="21" id="Live Chat">
+                                                <label class="form-check-label" for="Live Chat" data-toggle="tooltip"
+                                                    data-placement="right" title="21">Live Chat</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[17][]" id="Listingh17" value="1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[18]"
+                                                    value="22" id="Chat History">
+                                                <label class="form-check-label" for="Chat History" data-toggle="tooltip"
+                                                    data-placement="right" title="22">Chat History</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[18][]" id="Listingh18" value="1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[19]"
+                                                    value="23" id="Franchise">
+                                                <label class="form-check-label" for="Franchise" data-toggle="tooltip"
+                                                    data-placement="right" title="23">Franchise</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[19][]" id="Listingh19" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[19][]"
+                                                        id="Add19" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[19][]"
+                                                        id="Edit19" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[19][]"
+                                                        id="View19" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[19][]"
+                                                        id="Delete19" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[19][]"
+                                                        id="Reset Password19" value="6">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="6">Reset Password</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[20]"
+                                                    value="24" id="Grade">
+                                                <label class="form-check-label" for="Grade" data-toggle="tooltip"
+                                                    data-placement="right" title="24">Grade</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[20][]" id="Listingh20" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[20][]"
+                                                        id="Update20" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Update</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[21]"
+                                                    value="25" id="Courses &amp; Modules">
+                                                <label class="form-check-label" for="Courses &amp; Modules"
+                                                    data-toggle="tooltip" data-placement="right" title="25">Courses
+                                                    &amp; Modules</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[21][]" id="Listingh21" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[21][]"
+                                                        id="Add21" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[21][]"
+                                                        id="Edit21" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[21][]"
+                                                        id="Change Status21" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Change Status</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[21][]"
+                                                        id=" Modules21" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5"> Modules</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[22]"
+                                                    value="26" id="Examination Module">
+                                                <label class="form-check-label" for="Examination Module"
+                                                    data-toggle="tooltip" data-placement="right" title="26">Examination
+                                                    Module</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[22][]" id="Listingh22" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[22][]"
+                                                        id="Add22" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[22][]"
+                                                        id="Edit22" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[22][]"
+                                                        id="View22" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[22][]"
+                                                        id="Delete22" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[23]"
+                                                    value="27" id="Home Faq">
+                                                <label class="form-check-label" for="Home Faq" data-toggle="tooltip"
+                                                    data-placement="right" title="27">Home Faq</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[23][]" id="Listingh23" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[23][]"
+                                                        id="Add23" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[23][]"
+                                                        id="Edit23" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[23][]"
+                                                        id="View23" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[23][]"
+                                                        id="Delete23" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[24]"
+                                                    value="28" id="Ins. Batch">
+                                                <label class="form-check-label" for="Ins. Batch" data-toggle="tooltip"
+                                                    data-placement="right" title="28">Ins. Batch</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[24][]" id="Listingh24" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[24][]"
+                                                        id="Add24" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[24][]"
+                                                        id="Edit24" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[24][]"
+                                                        id="View24" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[24][]"
+                                                        id="Delete24" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[25]"
+                                                    value="29" id="Students">
+                                                <label class="form-check-label" for="Students" data-toggle="tooltip"
+                                                    data-placement="right" title="29">Students</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[25][]" id="Listingh25" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[25][]"
+                                                        id="Add25" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[25][]"
+                                                        id="Edit25" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[25][]"
+                                                        id="View25" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[25][]"
+                                                        id="Delete25" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[26]"
+                                                    value="30" id="Payment Receipt">
+                                                <label class="form-check-label" for="Payment Receipt"
+                                                    data-toggle="tooltip" data-placement="right" title="30">Payment
+                                                    Receipt</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[26][]" id="Listingh26" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[26][]"
+                                                        id="Add26" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[26][]"
+                                                        id="Edit26" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[26][]"
+                                                        id="View26" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[26][]"
+                                                        id="Delete26" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[27]"
+                                                    value="31" id="Pending Amount">
+                                                <label class="form-check-label" for="Pending Amount"
+                                                    data-toggle="tooltip" data-placement="right" title="31">Pending
+                                                    Amount</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[27][]" id="Listingh27" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[27][]"
+                                                        id="Add27" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[27][]"
+                                                        id="Edit27" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[27][]"
+                                                        id="View27" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[27][]"
+                                                        id="Delete27" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[28]"
+                                                    value="32" id="Completed Students">
+                                                <label class="form-check-label" for="Completed Students"
+                                                    data-toggle="tooltip" data-placement="right" title="32">Completed
+                                                    Students</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[28][]" id="Listingh28" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[28][]"
+                                                        id="Marks Upload28" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Marks Upload</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[28][]"
+                                                        id="Generate Certificate28" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Generate Certificate</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[28][]"
+                                                        id="View28" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">View</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[28][]"
+                                                        id="Delete
+28" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">Delete
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[29]"
+                                                    value="33" id="Certified Students">
+                                                <label class="form-check-label" for="Certified Students"
+                                                    data-toggle="tooltip" data-placement="right" title="33">Certified
+                                                    Students</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[29][]" id="Listingh29" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[29][]"
+                                                        id="Download29" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Download</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[29][]"
+                                                        id="Cancert Cert29" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Cancert Cert</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[30]"
+                                                    value="34" id="Franchise Register Page">
+                                                <label class="form-check-label" for="Franchise Register Page"
+                                                    data-toggle="tooltip" data-placement="right" title="34">Franchise
+                                                    Register Page</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[30][]" id="Listingh30" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[30][]"
+                                                        id="Update30" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Update</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[31]"
+                                                    value="35" id="Student's Attendance">
+                                                <label class="form-check-label" for="Student's Attendance"
+                                                    data-toggle="tooltip" data-placement="right" title="35">Student's
+                                                    Attendance</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[31][]" id="Listingh31" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[31][]"
+                                                        id="Absent31" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Absent</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[31][]"
+                                                        id="Present31" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Present</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[32]"
+                                                    value="36" id="View Attendance">
+                                                <label class="form-check-label" for="View Attendance"
+                                                    data-toggle="tooltip" data-placement="right" title="36">View
+                                                    Attendance</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[32][]" id="Listingh32" value="1">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[33]"
+                                                    value="37" id="Product Category">
+                                                <label class="form-check-label" for="Product Category"
+                                                    data-toggle="tooltip" data-placement="right" title="37">Product
+                                                    Category</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[33][]" id="Listingh33" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[33][]"
+                                                        id="add33" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[33][]"
+                                                        id="edit33" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[33][]"
+                                                        id="delete33" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[34]"
+                                                    value="38" id="Product">
+                                                <label class="form-check-label" for="Product" data-toggle="tooltip"
+                                                    data-placement="right" title="38">Product</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[34][]" id="Listingh34" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[34][]"
+                                                        id="add34" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[34][]"
+                                                        id="edit34" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[34][]"
+                                                        id="delete34" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[35]"
+                                                    value="39" id="Suppliers">
+                                                <label class="form-check-label" for="Suppliers" data-toggle="tooltip"
+                                                    data-placement="right" title="39">Suppliers</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[35][]" id="Listingh35" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[35][]"
+                                                        id="add35" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[35][]"
+                                                        id="edit35" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[35][]"
+                                                        id="delete35" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[36]"
+                                                    value="40" id="Purchase">
+                                                <label class="form-check-label" for="Purchase" data-toggle="tooltip"
+                                                    data-placement="right" title="40">Purchase</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[36][]" id="Listingh36" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[36][]"
+                                                        id="add36" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[36][]"
+                                                        id="edit36" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[36][]"
+                                                        id="delete36" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">delete</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[36][]"
+                                                        id="view36" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">view</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[36][]"
+                                                        id="receipt36" value="6">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="6">receipt</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[36][]"
+                                                        id="pdf36" value="7">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="7">pdf</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[37]"
+                                                    value="41" id="Customer">
+                                                <label class="form-check-label" for="Customer" data-toggle="tooltip"
+                                                    data-placement="right" title="41">Customer</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[37][]" id="Listingh37" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[37][]"
+                                                        id="add37" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[37][]"
+                                                        id="edit37" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[37][]"
+                                                        id="delete37" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[38]"
+                                                    value="42" id="Sales">
+                                                <label class="form-check-label" for="Sales" data-toggle="tooltip"
+                                                    data-placement="right" title="42">Sales</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[38][]" id="Listingh38" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[38][]"
+                                                        id="add38" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[38][]"
+                                                        id="edit38" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[38][]"
+                                                        id="delete38" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">delete</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[38][]"
+                                                        id="view38" value="5">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="5">view</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[39]"
+                                                    value="43" id="Report">
+                                                <label class="form-check-label" for="Report" data-toggle="tooltip"
+                                                    data-placement="right" title="43">Report</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[39][]" id="Listingh39" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[39][]"
+                                                        id="view39" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">view</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input class="form-check-input" type="checkbox" name="menu_id[40]"
+                                                    value="44" id="Cancel Class">
+                                                <label class="form-check-label" for="Cancel Class" data-toggle="tooltip"
+                                                    data-placement="right" title="44">Cancel Class</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="hidden" name="crudid[40][]" id="Listingh40" value="1">
+
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[40][]"
+                                                        id="Add40" value="2">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="2">Add</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[40][]"
+                                                        id="Edit40" value="3">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="3">Edit</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="crudid[40][]"
+                                                        id="Delete40" value="4">
+                                                    <label class="form-check-label" for="Delete" data-toggle="tooltip"
+                                                        data-placement="right" title="4">Delete</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="image" class="col-sm-2 mb-3 mb-sm-0">Status:</label>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="exampleRadios1"
+                                            value="1">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Active
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="exampleRadios2"
+                                            value="0">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            In Active
+                                        </label>
+                                    </div>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="Reset" class="btn btn-secondary">Reset</button>
+                            <a href="https://localhost/career_boss/admin/user_groups" class="btn btn-warning">Cancel</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
